@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(npm run crypto-encrypt:*)",
+      "Bash(redis-cli:*)",
+      "Bash(export:*)",
+      "Bash(export VAULT_SKIP_VERIFY=true)",
+      "Bash(vault write:*)",
+      "Bash(npm run perf-test:*)",
+      "Bash(node:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

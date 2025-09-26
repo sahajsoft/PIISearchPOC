@@ -1,0 +1,38 @@
+{
+  "name": "pii_eval_v1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-redis-hmac.js",
+    "generate-pii": "node src/pii-data-generator.js",
+    "encrypt-csv": "node src/vault-csv-encryptor.js",
+    "import-csv": "node src/csv-to-pii-importer.js",
+    "vault-helper": "node src/vault-helper.js",
+    "build-index": "node src/pii-search-indexer.js --build-index",
+    "build-db-index": "node src/pii-db-search-indexer.js --build-index",
+    "search-stats": "node src/pii-search-indexer.js --stats",
+    "search-api": "node src/pii-search-api.js",
+    "test-search": "node test-search.js",
+    "test-redis-hmac": "node test-redis-hmac.js",
+    "pipeline": "npm run generate-pii && npm run encrypt-csv && npm run import-csv && npm run build-db-index",
+    "full-pipeline": "npm run pipeline && npm run build-index",
+    "approach-comparison": "npm run pipeline && npm run test-redis-hmac",
+    "perf-test": "node src/search-performance-tester.js --comprehensive",
+    "perf-test-single": "node src/search-performance-tester.js --single",
+    "perf-test-complex": "node src/search-performance-tester.js --complex",
+    "perf-test-validate": "node src/search-performance-tester.js --validate",
+    "cleanup-all": "node src/cleanup-all.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.4.5",
+    "node-vault": "^0.10.5",
+    "pg": "^8.16.3",
+    "redis": "^5.8.2"
+  }
+}

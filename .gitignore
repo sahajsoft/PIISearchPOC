@@ -1,0 +1,220 @@
+# PII Evaluation POC Project - .gitignore
+# =====================================================
+# POC-FRIENDLY: Includes generated files and test data
+# =====================================================
+
+# ===============================================
+# Node.js dependencies and build artifacts
+# ===============================================
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# ===============================================
+# Operating System files
+# ===============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===============================================
+# IDE and Editor files
+# ===============================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vimrc.local
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===============================================
+# Temporary files and logs
+# ===============================================
+
+# Application logs (exclude large log files only)
+indexer.log
+*.log.[0-9]*
+vault-huge.log
+
+# Large temporary files
+tmp/
+temp/
+.tmp/
+
+# Large performance test outputs (keep small ones)
+test_results/large-*.json
+test_results/perf-*.csv
+
+# ===============================================
+# Environment and Security files
+# ===============================================
+
+# Environment files (ALWAYS EXCLUDE - contain sensitive data)
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+.env.*.local
+
+# Sensitive configuration files
+config/production.json
+config/staging.json
+config/local.json
+secrets.json
+vault-tokens.json
+
+# SSL certificates and keys (if any)
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# ===============================================
+# POC INCLUSIONS (normally excluded in production)
+# ===============================================
+
+# INCLUDE: Generated PII CSV files (for POC demonstration)
+# resources/*.csv - COMMENTED OUT for POC
+
+# INCLUDE: Template environment file (safe to include)
+# .env.template - INCLUDED for setup reference
+
+# INCLUDE: Test databases (for POC demonstration)
+# *.db - COMMENTED OUT for POC
+# *.sqlite* - COMMENTED OUT for POC
+
+# INCLUDE: Redis dumps (for POC state preservation)
+# dump.rdb - COMMENTED OUT for POC
+# appendonly.aof - COMMENTED OUT for POC
+
+# ===============================================
+# POC NOTES FOR DEVELOPERS
+# ===============================================
+
+# This .gitignore is configured for POC/demonstration with security best practices
+#
+# INCLUDED IN REPOSITORY:
+# ✅ Generated PII test data (resources/*.csv) - for POC demonstration
+# ✅ Environment template file (.env.template) - safe configuration reference
+# ✅ Test database files (*.db, *.sqlite) - for POC demonstration
+# ✅ Redis state files (dump.rdb, appendonly.aof) - for POC demonstration
+# ✅ Performance test results - for analysis
+# ✅ Log files (for debugging purposes)
+#
+# EXCLUDED FROM REPOSITORY (SECURITY):
+# ❌ All .env files (contain sensitive credentials)
+# ❌ Production/staging config files
+# ❌ SSL certificates and private keys
+# ❌ Vault tokens and secrets
+# ❌ node_modules/ (too large, can be reinstalled)
+# ❌ IDE configuration files (.vscode/, .idea/)
+# ❌ OS-specific files (.DS_Store, Thumbs.db)
+# ❌ Temporary build artifacts
+#
+# SETUP: Copy .env.template to .env and configure with your credentials
+# PRODUCTION: Review and restrict inclusions for production deployment
